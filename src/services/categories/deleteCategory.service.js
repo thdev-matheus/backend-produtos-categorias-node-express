@@ -2,13 +2,6 @@ import database from "../../database";
 
 const deleteCategoryService = async (category_id) => {
   try {
-    const id = await database.query("SELECT * FROM categories");
-    const idExisting = id.rows.find((row) => row.id === category_id);
-
-    if (idExisting === undefined) {
-      throw "Not found!";
-    }
-
     const res = await database.query(
       `DELETE FROM
             categories
