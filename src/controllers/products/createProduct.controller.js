@@ -10,7 +10,7 @@ const createProductController = async (req, res) => {
       category_id && category_id
     );
 
-    created.price = +created.price;
+    created.product.price = +created.product.price;
 
     return res.status(201).json(created);
   } catch (err) {

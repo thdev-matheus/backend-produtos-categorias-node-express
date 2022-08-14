@@ -8,7 +8,7 @@ const verifyCategoryExists = async (req, res, next) => {
     const idExisting = id.rows.find((row) => row.id === category_id);
 
     if (idExisting === undefined) {
-      return res.status(404).json({ message: "not found" });
+      return res.status(400).json({ message: "not found" });
     }
 
     next();
